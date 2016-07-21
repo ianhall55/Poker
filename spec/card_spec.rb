@@ -3,8 +3,15 @@ require 'card'
 describe Card do
   subject(:card){Card.new('4',:H)}
 
-  it "should have a value" do
-    puts card.to_s
-    expect(card.value).to eq(4)
+  describe '#value' do
+    let (:face_card) {Card.new('K',:H)}
+
+    it "should have a value" do
+      expect(card.value).to eq(4)
+    end
+
+    it 'should have values for face cards' do
+      expect(face_card.value).to eq(13)
+    end
   end
 end

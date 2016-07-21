@@ -1,3 +1,5 @@
+require_relative 'card.rb'
+
 class Deck
   attr_reader :cards
 
@@ -10,7 +12,7 @@ class Deck
   end
 
   def shuffle
-    @cards.shuffle
+    @cards.shuffle!
   end
 
   private

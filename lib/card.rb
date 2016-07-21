@@ -10,6 +10,7 @@ class Card
 
   def value
     return get_num if check_if_num?
+    get_face
   end
 
   def to_s
@@ -34,6 +35,11 @@ class Card
   def get_num
     return @face[0].to_i unless @face[0].to_i == 1
     10
+  end
+
+  def get_face
+    face_values = {"J" => 11, "Q" => 12, "K" => 13, "A" => 14}
+    face_values[@face]
   end
 
 
